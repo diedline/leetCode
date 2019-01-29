@@ -73,7 +73,7 @@ public class TestLambda2 {
     @Test
     public void test5(){
         Comparator<Integer> con = (Integer x,Integer y) ->  Integer.compare(x,y);
-        System.out.println(1);
+        System.out.println(2);
     }
 
     //ÀàĞÍÍÆ¶Ï
