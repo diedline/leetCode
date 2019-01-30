@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 /**
  * Lambda 的基础语法 新的操作符 "->"  称为 lambda 操作符
@@ -98,4 +99,6 @@ public class TestLambda2 {
     public Integer operation(Integer num, MyFun mf){
         return mf.getValue(num);
     }
+
+
 }
