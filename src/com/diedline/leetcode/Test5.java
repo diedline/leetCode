@@ -28,6 +28,7 @@ class Solution5 {
 //        HashMap<Integer,Index> indexMap = new HashMap<>();
 //        indexMap.put(0,index);
 //        System.out.println(indexMap.get(0).getA() + indexMap.get(0).getB());
+        longestPalindrome("abbae");
     }
 
     /**
@@ -66,42 +67,59 @@ class Solution5 {
         }
     }
     public String longestPalindrome(String s) {
-        HashMap hashMap = contain(s);
+        HashMap<Index,Character> hashMap = contain(s);
+        Set<Integer> set = null;
+
+        HashMap<Integer,Integer> hs = isPalindrome(s,hashMap);
+        //先遍历测试下
+        set = hs.keySet();
+        for (Integer i:set
+             ) {
+            System.out.println(i+" "+hs.get(i));
+        }
         return "a";
     }
     //再写一个判断是否回文的方法
-    public boolean isPalindrome(String s,HashMap<Character,Index> hs){
+    public HashMap<Integer,Integer> isPalindrome(String s,HashMap<Index,Character> hs){
+        HashMap<Integer,Integer> hs1 = new HashMap<>();
         char[] arr = s.toCharArray();
         //先获取hashMap的索引值
-        Set<Character> set = hs.keySet();
-        ArrayList<Index> arrayList = new ArrayList<>();
+        Set<Index> set = hs.keySet();
         //根据key值获取索引组 并存入arrayList中
-        for (Character c:set
-             ) {
-            arrayList.add(hs.get(c));
-        }
+        ArrayList<Index> arrayList = new ArrayList<>();
         //对于arrayList的每一个值都判断一遍是否是回文
-        for (Index x:arrayList
+        for (Index x:set
              ) {
             int start = x.getA();
             int end = x.getB();
-            //今天先到这里睡觉了88
-            return true;
+            for(int i = (start + end)/2 ; i >= start; i--){
+                for (int j = (start + end)/2; j <= end; j++) {
+                    if (arr[i] != arr[j]){
+                        return null;
+                    }else {
+                        hs1.put(start,end);
+                    }
+                }
+            }
         }
-        return true;
+
+        return hs1;
     }
 
     //直接就得到了一个HashMap里面有需要的所有信息 不过比较浪费时间复杂度
-    public HashMap<Character,Index> contain(String s){
+    public HashMap<Index,Character> contain(String s){
         char[] arr = s.toCharArray();
-        HashMap<Character,Index> hashMap = new HashMap<>();
-        Index index = new Index();
+        HashMap<Index,Character> hashMap = new HashMap<>();
+
         for (int i = 0; i <arr.length ; i++) {
             for (int j = i+1; j<arr.length; j++){
+                //i0 和 i3
                 if(arr[i] == arr[j]){
+                    //发现你如果在外面初始化index因为相同的地址空间会将不同值的index认为是同一个
+                    Index index = new Index();
                     index.setA(i);
                     index.setB(j);
-                    hashMap.put(arr[i],index);
+                    hashMap.put(index,arr[i]);
                 }
             }
         }
