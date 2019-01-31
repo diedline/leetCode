@@ -20,7 +20,7 @@ public class Test9 {
  * 输出: false
  * 解释: 从右向左读, 为 01 。因此它不是一个回文数。
  */
-class Solution {
+class Solution9 {
     public boolean isPalindrome(int x) {
         return false;
     }
