@@ -1,3 +1,4 @@
-# leetCode
-leetCode练习
-每天做几道LeetCode还不是美滋滋
+
+## 自己写的leetCode 解答 java 版目前做到第16题
+
+## 日常更新
