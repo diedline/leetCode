@@ -1,9 +1,10 @@
-package com.diedline.leetcode.stack;
+package com.diedline.leetcode;
 
 import java.util.Stack;
 
 public class Test232 {
 }
+
 /**
  * 使用栈实现队列的下列操作：
  *

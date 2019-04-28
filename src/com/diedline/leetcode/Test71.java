@@ -1,4 +1,4 @@
-package com.diedline.leetcode.stack;
+package com.diedline.leetcode;
 
 import org.junit.jupiter.api.Test;
 

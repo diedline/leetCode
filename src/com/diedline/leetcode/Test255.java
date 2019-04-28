@@ -1,4 +1,4 @@
-package com.diedline.leetcode.stack;
+package com.diedline.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;

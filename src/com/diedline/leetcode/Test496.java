@@ -1,4 +1,4 @@
-package com.diedline.leetcode.stack;
+package com.diedline.leetcode;
 
 public class Test496 {
 }
