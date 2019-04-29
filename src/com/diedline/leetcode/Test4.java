@@ -29,7 +29,7 @@ public class Test4 {
  *
  * 则中位数是 (2 + 3)/2 = 2.5
  */
-class Solution2 {
+class Solution4 {
     @Test
     public void test(){
         int[] nums1 = {1,2};
